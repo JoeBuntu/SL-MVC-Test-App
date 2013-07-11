@@ -1,0 +1,10 @@
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<hgroup class="title">
+    <h2>Welcome, @(User.Identity.Name)</h2>
+</hgroup>
+<p>
+    Check out this image: @(Html.ActionLink("Image", "ShowImage", "Tracking", routeValues: new { userid = (int) Membership.GetUser().ProviderUserKey, image = "socketpeople.jpg"}, htmlAttributes: null)) 
+</p

@@ -1,0 +1,26 @@
+﻿@using SocketLabs.TestApp.Domain.Entities;
+@model IEnumerable<User>
+
+@{
+    ViewBag.Title = "Admin";
+}
+<hgroup class="title">
+    <h2>Image View Statistics</h2>
+</hgroup>
+
+@(Html.Kendo().Grid<User>()
+      .Name("grid")
+      .DataSource(dataSource => dataSource // Configure the grid data source
+          .Ajax() // Specify that ajax binding is used
+          .Read(read => read.Action("ReadStatistics", "Admin")) // Set the action method which will return the data in JSON format
+       )
+      .Columns(columns =>
+      {
+          // Create a column bound to the ProductID property
+          columns.Bound(user => user.Name);
+          // Create a column bound to the ProductName property
+          columns.Bound(user => user.ImageViews); 
+      })
+      .Pageable() // Enable paging
+      .Sortable() // Enable sorting
+)

@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+<hgroup class="title">
+    <h2>Welcome, @(User.Identity.Name)</h2>
+</hgroup>
+<p>
+    Check out this image: @(Html.ActionLink("Image", "ShowImage")) 
+</p>

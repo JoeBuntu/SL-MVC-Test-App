@@ -1,0 +1,8 @@
+Notes Regarding Project:
+
+   1. Length of time: about 10hrs (3 of which were solving membership config problems and trying to get SqlCe to work with ASP membership).
+
+   2. In a real world app I would have used more than just one entity such as: User, Role, UserRoles, Image, ImageStatistics.
+
+   3. I used a seperate class for logging in to the database so that I did not have to include Password field with the User entity.
+
